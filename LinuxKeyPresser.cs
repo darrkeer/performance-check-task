@@ -22,7 +22,11 @@ public class LinuxKeyPresser : KeyPresser
         Run("ydotool", "click", "0xC0");
         Thread.Sleep(1500);
 
-        Run("ydotool", "key", "28:1", "28:0");
+        Run("ydotool", "mousemove", "--absolute", "-x", "400", "-y", "310");
+        Thread.Sleep(1500);
+
+        Run("ydotool", "click", "0xC0");
+        Thread.Sleep(1500);
 
         daemon.Kill();
         daemon.WaitForExit();
