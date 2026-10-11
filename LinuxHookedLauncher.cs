@@ -6,7 +6,7 @@ using System.Runtime.Versioning;
 [SupportedOSPlatform("linux")]
 public class LinuxHookedLauncher : HookedLauncher
 {
-    private const int STEAM_SHUTDOWN_WAIT_SECONDS = 5;
+    private const int STEAM_SHUTDOWN_WAIT_SECONDS = 10;
 
     private static readonly List<string> NEEDED_TOKENS = new() {
         "cpu_stats", "gpu_stats", "cpu_temp", "gpu_temp", "ram", "vram"

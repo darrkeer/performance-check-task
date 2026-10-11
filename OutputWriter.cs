@@ -21,6 +21,7 @@ public class OutputWriter
         
         using var writer = new StreamWriter(outputLogPath, append: true);
 
+        writer.WriteLine();
         writer.WriteLine($"{testName} test:");
         writer.WriteLine(delimiter);
 

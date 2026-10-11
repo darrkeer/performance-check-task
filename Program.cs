@@ -4,6 +4,7 @@ var utils = Utils.getPlatformUtils();
 
 // prepare output file
 {
+    Directory.CreateDirectory(Path.GetDirectoryName(utils.getOutputFilePath())!);
     using var writer = new StreamWriter(utils.getOutputFilePath());
     writer.Write("");
 }
