@@ -43,7 +43,7 @@ public abstract class KeyPresser
     {
         var p = StartProcess(file, args);
         p.WaitForExit();
-        
+
         if (p.ExitCode != 0)
         {
             throw new Exception($"Non-zero exit code for {file}: ");

@@ -24,7 +24,7 @@ public abstract class Utils
     {
         return Path.Combine(Directory.GetCurrentDirectory(), "configs", "GPUBenchmark.ini");
     }
-    
+
     public abstract string getSteamPath();
 
     public static Utils getPlatformUtils()

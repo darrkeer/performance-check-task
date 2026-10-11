@@ -21,12 +21,12 @@ public class LinuxLogProcessor : LogProcessor
     {
         LastResult.Clear();
 
-        var stream = new StreamReader(getLastLogPath());    
+        var stream = new StreamReader(getLastLogPath());
 
         var tokens = stream.ReadLine()!.Split(',');
         var values = stream.ReadLine()!.Split(',');
 
-        for (int i=0; i<tokens.Length; i++)
+        for (int i = 0; i < tokens.Length; i++)
         {
             LastResult[tokens[i]] = float.Parse(values[i]);
         }

@@ -10,9 +10,9 @@ public class LinuxHookedLauncher : HookedLauncher
 
     private static readonly List<string> NEEDED_TOKENS = new() {
         "cpu_stats", "gpu_stats", "cpu_temp", "gpu_temp", "ram", "vram"
-    }; 
+    };
 
-    public LinuxHookedLauncher(string id) : base(id) {}
+    public LinuxHookedLauncher(string id) : base(id) { }
 
     public override void Launch(Utils utils)
     {
@@ -48,7 +48,7 @@ public class LinuxHookedLauncher : HookedLauncher
             }
         }
         throw new Exception("Could not wait for steam for a shutdown");
-    } 
+    }
 
     private void changeSteamConfig(Utils utils)
     {
@@ -63,7 +63,7 @@ public class LinuxHookedLauncher : HookedLauncher
         }
 
         string configFilePath = Path.Combine(steamPath, "userdata", userid, "config", "localconfig.vdf");
-        
+
         // need to size up to check through all of the steam config file
         var settings = new VdfSerializerSettings
         {
@@ -100,12 +100,12 @@ public class LinuxHookedLauncher : HookedLauncher
     {
         string confPath = getMangoHUDConfigPath();
         Directory.CreateDirectory(Path.GetDirectoryName(confPath)!);
-        
+
         string mangohudOutDirPath = getMangoHUDOutputDirPath();
         Directory.CreateDirectory(mangohudOutDirPath);
 
         using var writer = new StreamWriter(confPath);
-        
+
         writer.WriteLine($"output_folder={mangohudOutDirPath}");
         writer.WriteLine($"log_interval=100");
         // wait 10 seconds for macros and loading into benchmark

@@ -18,7 +18,7 @@ public class OutputWriter
         Directory.CreateDirectory(Path.GetDirectoryName(fullPath)!);
 
         string outputLogPath = Path.GetFullPath(outFilePath);
-        
+
         using var writer = new StreamWriter(outputLogPath, append: true);
 
         writer.WriteLine();
@@ -26,7 +26,7 @@ public class OutputWriter
         writer.WriteLine(delimiter);
 
         writer.WriteLine("Game Presets:");
-        
+
         foreach (var (key, value) in presets)
         {
             writer.WriteLine($"{key}:\t{value}");
@@ -35,7 +35,7 @@ public class OutputWriter
         writer.WriteLine();
         writer.WriteLine("Test results:");
         writer.WriteLine(delimiter);
-        
+
         foreach (var (key, value) in testStats)
         {
             writer.WriteLine($"{key}:\t{value}");

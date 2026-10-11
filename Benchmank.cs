@@ -57,7 +57,7 @@ class Benchmark
         config.Dump(utils);
 
         launcher.Launch(utils);
-        
+
         // prob change to directory regex because it is not os specific
         string wukongProcessName = "GameThread";
         waitUntilStart(wukongProcessName, TimeSpan.FromSeconds(60));

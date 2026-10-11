@@ -1,7 +1,7 @@
 public class Config
 {
     public string path;
-    
+
     public Config(string filePath)
     {
         if (!File.Exists(filePath))
