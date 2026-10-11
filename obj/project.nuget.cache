@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "4KfjPsveK4o=",
+  "success": true,
+  "projectFilePath": "/home/darkeer/work/performance-check-task/performance-check-task.csproj",
+  "expectedPackageFiles": [
+    "/home/darkeer/.nuget/packages/gameloop.vdf/0.6.2/gameloop.vdf.0.6.2.nupkg.sha512",
+    "/home/darkeer/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/darkeer/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
+    "/home/darkeer/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.11/microsoft.aspnetcore.app.ref.10.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
