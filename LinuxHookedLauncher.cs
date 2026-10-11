@@ -24,7 +24,7 @@ public class LinuxHookedLauncher : HookedLauncher
         // adds a startup argument to a game for MangoHUD
         changeSteamConfig(utils);
 
-        string url = $"steam://rungameid/{gameId}";
+        string url = $"steam://rungameid/{GameId}";
         Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
 
         Console.WriteLine("Game Launched");
@@ -78,7 +78,7 @@ public class LinuxHookedLauncher : HookedLauncher
 
         // UserLocalConfigStore/Software/Valve/Steam/apps/<AppID>/LaunchOptions
         VProperty cfg = VdfConvert.Deserialize(File.ReadAllText(configFilePath), settings)!;
-        cfg.Value["Software"]?["Valve"]?["Steam"]?["apps"]?[gameId]?["LaunchOptions"] = new VValue(launchArgs);
+        cfg.Value["Software"]?["Valve"]?["Steam"]?["apps"]?[GameId]?["LaunchOptions"] = new VValue(launchArgs);
 
         File.Copy(configFilePath, configFilePath + ".bak", overwrite: true);
         File.WriteAllText(configFilePath, VdfConvert.Serialize(cfg, settings));

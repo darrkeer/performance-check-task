@@ -1,28 +1,28 @@
 public class OutputWriter
 {
     const string delimiter = "=================================================";
-    private string outFilePath;
-    private string testName;
+    private string OutFilePath { get; }
+    private string TestName { get; }
 
     public OutputWriter(string outFilePath, string testName)
     {
-        this.outFilePath = outFilePath;
-        this.testName = testName;
+        OutFilePath = outFilePath;
+        TestName = testName;
     }
 
     public void Write(Dictionary<string, float> testStats, Dictionary<string, string> presets)
     {
         Console.WriteLine("Writing logs");
 
-        string fullPath = Path.GetFullPath(outFilePath);
+        string fullPath = Path.GetFullPath(OutFilePath);
         Directory.CreateDirectory(Path.GetDirectoryName(fullPath)!);
 
-        string outputLogPath = Path.GetFullPath(outFilePath);
+        string outputLogPath = Path.GetFullPath(OutFilePath);
 
         using var writer = new StreamWriter(outputLogPath, append: true);
 
         writer.WriteLine();
-        writer.WriteLine($"{testName} test:");
+        writer.WriteLine($"{TestName} test:");
         writer.WriteLine(delimiter);
 
         writer.WriteLine("Game Presets:");

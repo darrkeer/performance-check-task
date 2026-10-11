@@ -2,12 +2,11 @@ using System.Runtime.Versioning;
 
 public abstract class HookedLauncher
 {
-    protected string gameId;
-
+    protected string GameId { get; private set; }
 
     public HookedLauncher(string id)
     {
-        gameId = id;
+        GameId = id;
     }
 
     public abstract void Launch(Utils utils);

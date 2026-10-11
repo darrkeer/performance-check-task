@@ -1,6 +1,6 @@
 public class Config
 {
-    public string path;
+    public string FilePath { get; private set; }
 
     public Config(string filePath)
     {
@@ -8,14 +8,14 @@ public class Config
         {
             throw new FileNotFoundException($"Config file not found: {filePath}");
         }
-        path = Path.GetFullPath(filePath);
+        FilePath = System.IO.Path.GetFullPath(filePath);
     }
 
     public void Dump(Utils utils)
     {
         string destPath = utils.getGameConfigPath();
-        File.Copy(path, destPath, overwrite: true);
+        File.Copy(FilePath, destPath, overwrite: true);
 
-        Console.WriteLine($"Config '{path}' loaded!");
+        Console.WriteLine($"Config '{FilePath}' loaded!");
     }
 }

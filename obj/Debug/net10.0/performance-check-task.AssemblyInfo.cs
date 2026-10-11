@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("performance-check-task")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73873a9b6bdf7c75a44c54fb1de7e9f4e678df4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b92fd4555e6e272c29afa3f9b9db2753e660da01")]
 [assembly: System.Reflection.AssemblyProductAttribute("performance-check-task")]
 [assembly: System.Reflection.AssemblyTitleAttribute("performance-check-task")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

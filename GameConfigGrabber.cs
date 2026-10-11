@@ -4,14 +4,16 @@ using System.Text.RegularExpressions;
 
 public class GameConfigGrabber
 {
-    private string filePath;
+    private string FilePath { get; }
+
     public GameConfigGrabber(Config config)
     {
-        filePath = config.path;
+        FilePath = config.FilePath;
     }
+
     public Dictionary<string, string> GrabData()
     {
-        var path = Path.Combine(Directory.GetCurrentDirectory(), filePath);
+        var path = Path.Combine(Directory.GetCurrentDirectory(), FilePath);
         var lines = File.ReadAllLines(path);
 
         Dictionary<string, string> result = new Dictionary<string, string>();

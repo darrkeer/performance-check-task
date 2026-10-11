@@ -1,21 +1,19 @@
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 class Benchmark
 {
-    public const int LOG_DURATION_SECONDS = 15;
+    public const int LOG_DURATION_SECONDS = 60;
     public const int LOAD_WAIT_TIME_SECONDS = 30;
     public const string STEAM_APP_ID = "3132990";
     public const string OUTPUT_LOG_PATH = "output/log.txt";
 
     public string Name { get; }
-    private Config config;
+    private Config Config { get; }
 
     public Benchmark(string name, string configPath)
     {
         Name = name;
-        config = new Config(configPath);
+        Config = new Config(configPath);
     }
 
     private (HookedLauncher, KeyPresser, LogProcessor) initialize()
@@ -54,7 +52,7 @@ class Benchmark
         (launcher, presser, processor) = initialize();
 
         // begin testing
-        config.Dump(utils);
+        Config.Dump(utils);
 
         launcher.Launch(utils);
 
@@ -72,7 +70,7 @@ class Benchmark
 
         processor.CaptureData();
 
-        GameConfigGrabber grabber = new GameConfigGrabber(config);
+        GameConfigGrabber grabber = new GameConfigGrabber(Config);
         OutputWriter writer = new OutputWriter(OUTPUT_LOG_PATH, Name);
         writer.Write(processor.LastResult, grabber.GrabData());
 

@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 
 public abstract class SpecsGrabber
 {
-    protected Dictionary<string, string> Specs;
+    protected Dictionary<string, string> Specs { get; private set; }
 
     public SpecsGrabber()
     {
